@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homag CNC CSV Cleaner</title>
+    <meta name="description" content="Clean and realign your raw Homag/CNC exports into a 32-column formatted CSV effortlessly.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- PapaParse for CSV parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1>CSV Realignment Tool</h1>
+            <p>Upload your raw Homag/CNC export CSV file to automatically clean, realign, and download the formatted 32-column version.</p>
+        </header>
+
+        <section class="upload-section">
+            <div id="dropzone" class="dropzone">
+                <div class="dropzone-content">
+                    <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    <h3>Drag & Drop your CSV here</h3>
+                    <p>or</p>
+                    <label for="fileInput" class="btn-primary">Browse Files</label>
+                    <input type="file" id="fileInput" accept=".csv" class="hidden-input">
+                </div>
+            </div>
+            
+            <div id="statusMessage" class="status-message hidden">
+                <span class="status-icon">✓</span>
+                <p id="statusText">Processing complete! Your file is downloading.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
